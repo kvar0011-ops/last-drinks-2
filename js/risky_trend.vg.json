@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Risky Drinking Trend by Sex, 2001–2022", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 300,
+  "data": {"url": "data/risky_trend.csv"},
+  "layer": [
+    {
+      "mark": {"type": "line", "strokeWidth": 3},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "title": "Survey Year", "axis": {"labelAngle": 0, "labelFont": "DM Sans"}},
+        "y": {"field": "pct", "type": "quantitative", "title": "% Drinking at Risky Levels", "scale": {"domain": [10, 45]}},
+        "color": {
+          "field": "group",
+          "scale": {"domain": ["Male", "Female", "Total"], "range": ["#D4692A", "#7AA65A", "#B8841A"]},
+          "legend": {"title": "Group", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+        },
+        "strokeDash": {"field": "group", "scale": {"domain": ["Male", "Female", "Total"], "range": [[1,0],[4,2],[2,2]]}},
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "group", "title": "Group"},
+          {"field": "pct", "title": "% Risky Drinking", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "point", "filled": true, "size": 70},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "pct", "type": "quantitative"},
+        "color": {"field": "group", "scale": {"domain": ["Male", "Female", "Total"], "range": ["#D4692A", "#7AA65A", "#B8841A"]}}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}

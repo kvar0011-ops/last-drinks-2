@@ -1,0 +1,51 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Per Capita Alcohol Consumption, 2000–2024", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 260,
+  "data": {"url": "data/per_capita.csv"},
+  "layer": [
+    {
+      "mark": {"type": "area", "color": "#B8841A", "opacity": 0.15, "line": false},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal", "axis": {"labelAngle": -45, "labelFontSize": 10, "labelExpr": "datum.value.slice(0,4)", "title": null, "labelFont": "DM Sans"}},
+        "y": {"field": "total", "type": "quantitative", "scale": {"domain": [8.5, 12]}, "title": "Litres of pure alcohol per person"}
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "#B8841A", "strokeWidth": 3},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "total", "type": "quantitative"},
+        "tooltip": [
+          {"field": "year", "title": "Year"},
+          {"field": "total", "title": "Litres per person", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {"type": "point", "color": "#B8841A", "filled": true, "size": 55},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "total", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [{"filter": "datum.year === '2007-08' || datum.year === '2020-21' || datum.year === '2023-24'"}],
+      "mark": {"type": "text", "dy": -15, "fontSize": 11, "fontWeight": "bold", "color": "#D4692A", "font": "DM Sans"},
+      "encoding": {
+        "x": {"field": "year", "type": "ordinal"},
+        "y": {"field": "total", "type": "quantitative"},
+        "text": {
+          "condition": {"test": "datum.year === '2007-08'", "value": "Peak 11.4L"},
+          "value": {"condition": {"test": "datum.year === '2020-21'", "value": "COVID spike"}, "value": "Record low 9.8L"}
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Beer Strength Breakdown: Full vs Mid vs Low, 2000–2023", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 280,
+  "data": {"url": "data/beer_strength.csv"},
+  "transform": [
+    {"fold": ["full_strength", "mid_strength", "low_strength"], "as": ["strength_key", "pct"]},
+    {"calculate": "datum.strength_key === 'full_strength' ? 'Full Strength' : datum.strength_key === 'mid_strength' ? 'Mid Strength' : 'Low Strength'", "as": "Strength"}
+  ],
+  "mark": {"type": "bar"},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "Year", "axis": {"labelAngle": -45, "labelFontSize": 9}},
+    "y": {"field": "pct", "type": "quantitative", "stack": "normalize", "title": "Share of Beer Consumed", "axis": {"format": "%"}},
+    "color": {
+      "field": "Strength",
+      "scale": {"domain": ["Full Strength", "Mid Strength", "Low Strength"], "range": ["#B8841A", "#D4692A", "#7AA65A"]},
+      "legend": {"title": "Beer Strength", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "Strength", "title": "Strength"},
+      {"field": "pct", "title": "%"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}

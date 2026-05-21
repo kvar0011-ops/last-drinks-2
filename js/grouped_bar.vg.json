@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Who Exceeds Alcohol Guidelines? By Age Group and Sex, 2022", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 300,
+  "data": {"url": "data/age_sex.csv"},
+  "transform": [
+    {"fold": ["male_pct", "female_pct"], "as": ["sex_key", "pct"]},
+    {"calculate": "datum.sex_key === 'male_pct' ? 'Male' : 'Female'", "as": "Sex"}
+  ],
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4},
+  "encoding": {
+    "x": {"field": "age_group", "type": "ordinal", "title": "Age Group", "axis": {"labelAngle": 0, "labelFont": "DM Sans"}},
+    "y": {"field": "pct", "type": "quantitative", "title": "% Exceeding NHMRC Guideline", "scale": {"domain": [0, 50]}},
+    "xOffset": {"field": "Sex"},
+    "color": {
+      "field": "Sex",
+      "scale": {"domain": ["Male", "Female"], "range": ["#D4692A", "#B8841A"]},
+      "legend": {"title": "Sex", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+    },
+    "tooltip": [
+      {"field": "age_group", "title": "Age Group"},
+      {"field": "Sex", "title": "Sex"},
+      {"field": "pct", "title": "% Exceeding Guideline", "format": ".1f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}

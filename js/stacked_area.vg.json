@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Beverage Type Share of Alcohol Consumed, 2000–2024", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 300,
+  "data": {"url": "data/per_capita.csv"},
+  "transform": [
+    {"fold": ["beer", "wine", "spirits", "rtd"], "as": ["beverage_key", "litres"]},
+    {"calculate": "datum.beverage_key === 'beer' ? 'Beer' : datum.beverage_key === 'wine' ? 'Wine' : datum.beverage_key === 'spirits' ? 'Spirits' : 'RTD'", "as": "Beverage"}
+  ],
+  "mark": {"type": "area"},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "axis": {"labelAngle": -45, "labelFontSize": 10, "labelExpr": "datum.value.slice(0,4)", "title": null}},
+    "y": {"field": "litres", "type": "quantitative", "stack": "zero", "title": "Litres of pure alcohol per capita"},
+    "color": {
+      "field": "Beverage",
+      "scale": {"domain": ["Beer", "Wine", "Spirits", "RTD"], "range": ["#7AA65A", "#B8841A", "#D4692A", "#90B8D8"]},
+      "legend": {"title": "Beverage Type", "orient": "right", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "Beverage", "title": "Beverage"},
+      {"field": "litres", "title": "Litres per capita", "format": ".2f"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}

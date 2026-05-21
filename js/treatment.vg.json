@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Drug Treatment Episodes by Principal Drug of Concern, 2014–2023", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "width": "container",
+  "height": 280,
+  "data": {"url": "data/treatment.csv"},
+  "mark": {"type": "bar", "cornerRadiusTopLeft": 4, "cornerRadiusTopRight": 4},
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "Year", "axis": {"labelAngle": 0}},
+    "y": {"field": "pct", "type": "quantitative", "title": "% of All Treatment Episodes", "scale": {"domain": [0, 100]}},
+    "color": {
+      "field": "drug",
+      "scale": {"domain": ["Alcohol", "Amphetamines", "Cannabis", "Other"], "range": ["#B8841A", "#D4692A", "#7AA65A", "#C8B88A"]},
+      "legend": {"title": "Principal Drug", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+    },
+    "tooltip": [
+      {"field": "year", "title": "Year"},
+      {"field": "drug", "title": "Drug"},
+      {"field": "pct", "title": "%"}
+    ]
+  },
+  "config": {
+    "view": {"stroke": null},
+    "background": "transparent",
+    "axis": {"gridColor": "#ede3cc", "domainColor": "#c8b88a", "labelColor": "#5A4020", "titleColor": "#5A4020", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+  }
+}
