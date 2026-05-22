@@ -8,9 +8,14 @@
     "anchor": "start"
   },
   "width": "container",
-  "height": 360,
+  "height": 380,
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 700
   },
   "data": {
     "url": "js/australia_states.json",
