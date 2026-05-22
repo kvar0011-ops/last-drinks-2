@@ -10,65 +10,184 @@
   "width": "container",
   "height": 380,
   "projection": {
-    "type": "mercator",
-    "center": [
-      134,
-      -28
-    ],
-    "scale": 700
+    "type": "mercator"
   },
-  "data": {
-    "url": "js/australia_states.json",
-    "format": {
-      "type": "json",
-      "property": "features"
-    }
-  },
-  "mark": {
-    "type": "geoshape",
-    "stroke": "white",
-    "strokeWidth": 1.5
-  },
-  "encoding": {
-    "color": {
-      "field": "properties.exceeded_pct",
-      "type": "quantitative",
-      "scale": {
-        "type": "threshold",
-        "domain": [
-          24,
-          27,
-          29,
-          31
-        ],
-        "range": [
-          "#fde8c8",
-          "#f5c88a",
-          "#e09040",
-          "#c86810",
-          "#8B4500"
-        ]
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson"
       },
-      "legend": {
-        "title": "% Exceeding Guidelines",
-        "orient": "bottom",
-        "gradientLength": 200,
-        "labelFont": "DM Sans",
-        "titleFont": "DM Sans"
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "values": [
+                {
+                  "state": "New South Wales",
+                  "pct": 26.3,
+                  "abbr": "NSW"
+                },
+                {
+                  "state": "Victoria",
+                  "pct": 23.8,
+                  "abbr": "VIC"
+                },
+                {
+                  "state": "Queensland",
+                  "pct": 29.4,
+                  "abbr": "QLD"
+                },
+                {
+                  "state": "South Australia",
+                  "pct": 29.3,
+                  "abbr": "SA"
+                },
+                {
+                  "state": "Western Australia",
+                  "pct": 29.9,
+                  "abbr": "WA"
+                },
+                {
+                  "state": "Tasmania",
+                  "pct": 26.8,
+                  "abbr": "TAS"
+                },
+                {
+                  "state": "Northern Territory",
+                  "pct": 31.1,
+                  "abbr": "NT"
+                },
+                {
+                  "state": "Australian Capital Territory",
+                  "pct": 25.7,
+                  "abbr": "ACT"
+                }
+              ]
+            },
+            "key": "state",
+            "fields": [
+              "pct",
+              "abbr"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "pct",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [
+              24,
+              27,
+              29,
+              31
+            ],
+            "range": [
+              "#fde8c8",
+              "#f5c88a",
+              "#e09040",
+              "#c86810",
+              "#8B4500"
+            ]
+          },
+          "legend": {
+            "title": "% Exceeding Guidelines",
+            "orient": "bottom",
+            "gradientLength": 200,
+            "labelFont": "DM Sans",
+            "titleFont": "DM Sans"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.STATE_NAME",
+            "title": "State/Territory"
+          },
+          {
+            "field": "pct",
+            "title": "% Exceeding Guideline",
+            "format": ".1f"
+          }
+        ]
       }
     },
-    "tooltip": [
-      {
-        "field": "properties.STATE_NAME",
-        "title": "State/Territory"
+    {
+      "data": {
+        "values": [
+          {
+            "abbr": "NSW",
+            "lon": 146,
+            "lat": -32.5
+          },
+          {
+            "abbr": "VIC",
+            "lon": 144.5,
+            "lat": -37
+          },
+          {
+            "abbr": "QLD",
+            "lon": 144.5,
+            "lat": -22
+          },
+          {
+            "abbr": "SA",
+            "lon": 135,
+            "lat": -30
+          },
+          {
+            "abbr": "WA",
+            "lon": 122,
+            "lat": -26
+          },
+          {
+            "abbr": "TAS",
+            "lon": 146.5,
+            "lat": -42
+          },
+          {
+            "abbr": "NT",
+            "lon": 133,
+            "lat": -19.5
+          },
+          {
+            "abbr": "ACT",
+            "lon": 149.1,
+            "lat": -35.5
+          }
+        ]
       },
-      {
-        "field": "properties.exceeded_pct",
-        "title": "% Exceeding Guideline",
-        "format": ".1f"
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "font": "DM Sans",
+        "color": "white",
+        "dy": 0
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "abbr",
+          "type": "nominal"
+        }
       }
-    ]
-  },
+    }
+  ],
   "config": {
     "view": {
       "stroke": null
