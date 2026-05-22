@@ -8,9 +8,14 @@
     "anchor": "start"
   },
   "width": "container",
-  "height": 380,
+  "height": 420,
   "projection": {
-    "type": "mercator"
+    "type": "mercator",
+    "center": [
+      133,
+      -28
+    ],
+    "scale": 650
   },
   "layer": [
     {
@@ -25,50 +30,41 @@
               "values": [
                 {
                   "state": "New South Wales",
-                  "pct": 26.3,
-                  "abbr": "NSW"
+                  "pct": 26.3
                 },
                 {
                   "state": "Victoria",
-                  "pct": 23.8,
-                  "abbr": "VIC"
+                  "pct": 23.8
                 },
                 {
                   "state": "Queensland",
-                  "pct": 29.4,
-                  "abbr": "QLD"
+                  "pct": 29.4
                 },
                 {
                   "state": "South Australia",
-                  "pct": 29.3,
-                  "abbr": "SA"
+                  "pct": 29.3
                 },
                 {
                   "state": "Western Australia",
-                  "pct": 29.9,
-                  "abbr": "WA"
+                  "pct": 29.9
                 },
                 {
                   "state": "Tasmania",
-                  "pct": 26.8,
-                  "abbr": "TAS"
+                  "pct": 26.8
                 },
                 {
                   "state": "Northern Territory",
-                  "pct": 31.1,
-                  "abbr": "NT"
+                  "pct": 31.1
                 },
                 {
                   "state": "Australian Capital Territory",
-                  "pct": 25.7,
-                  "abbr": "ACT"
+                  "pct": 25.7
                 }
               ]
             },
             "key": "state",
             "fields": [
-              "pct",
-              "abbr"
+              "pct"
             ]
           }
         }
@@ -101,7 +97,7 @@
           "legend": {
             "title": "% Exceeding Guidelines",
             "orient": "bottom",
-            "gradientLength": 200,
+            "gradientLength": 220,
             "labelFont": "DM Sans",
             "titleFont": "DM Sans"
           }
@@ -113,7 +109,7 @@
           },
           {
             "field": "pct",
-            "title": "% Exceeding Guideline",
+            "title": "% Exceeding",
             "format": ".1f"
           }
         ]
@@ -124,7 +120,7 @@
         "values": [
           {
             "abbr": "NSW",
-            "lon": 146,
+            "lon": 146.5,
             "lat": -32.5
           },
           {
@@ -135,7 +131,7 @@
           {
             "abbr": "QLD",
             "lon": 144.5,
-            "lat": -22
+            "lat": -22.5
           },
           {
             "abbr": "SA",
@@ -144,7 +140,7 @@
           },
           {
             "abbr": "WA",
-            "lon": 122,
+            "lon": 121.5,
             "lat": -26
           },
           {
@@ -166,11 +162,10 @@
       },
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 12,
         "fontWeight": "bold",
         "font": "DM Sans",
-        "color": "white",
-        "dy": 0
+        "color": "white"
       },
       "encoding": {
         "longitude": {
