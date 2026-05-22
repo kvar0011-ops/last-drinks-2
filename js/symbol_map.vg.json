@@ -2,67 +2,660 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Daily Drinkers by State & Territory, 2022",
-    "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"
+    "fontSize": 15,
+    "font": "DM Sans",
+    "color": "#1C1208",
+    "anchor": "start"
   },
   "width": "container",
   "height": 420,
-  "projection": {"type": "mercator", "center": [133, -28], "scale": 650},
+  "projection": {
+    "type": "mercator",
+    "center": [
+      133,
+      -28
+    ],
+    "scale": 650
+  },
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.min.geojson"
+        "values": [
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "New South Wales",
+              "pct": 26.3,
+              "abbr": "NSW"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    141.0,
+                    -34.0
+                  ],
+                  [
+                    141.0,
+                    -29.2
+                  ],
+                  [
+                    150.0,
+                    -28.5
+                  ],
+                  [
+                    153.6,
+                    -28.2
+                  ],
+                  [
+                    153.6,
+                    -37.5
+                  ],
+                  [
+                    150.7,
+                    -38.1
+                  ],
+                  [
+                    149.0,
+                    -37.5
+                  ],
+                  [
+                    148.3,
+                    -37.5
+                  ],
+                  [
+                    145.5,
+                    -38.0
+                  ],
+                  [
+                    144.0,
+                    -37.5
+                  ],
+                  [
+                    141.0,
+                    -37.5
+                  ],
+                  [
+                    141.0,
+                    -34.0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Victoria",
+              "pct": 23.8,
+              "abbr": "VIC"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    141.0,
+                    -34.0
+                  ],
+                  [
+                    144.0,
+                    -37.5
+                  ],
+                  [
+                    145.5,
+                    -38.0
+                  ],
+                  [
+                    148.3,
+                    -37.5
+                  ],
+                  [
+                    149.0,
+                    -37.5
+                  ],
+                  [
+                    150.7,
+                    -38.1
+                  ],
+                  [
+                    149.4,
+                    -38.7
+                  ],
+                  [
+                    148.1,
+                    -38.5
+                  ],
+                  [
+                    146.4,
+                    -39.0
+                  ],
+                  [
+                    144.5,
+                    -38.8
+                  ],
+                  [
+                    143.4,
+                    -38.8
+                  ],
+                  [
+                    141.0,
+                    -38.5
+                  ],
+                  [
+                    141.0,
+                    -34.0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Queensland",
+              "pct": 29.4,
+              "abbr": "QLD"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    138.0,
+                    -16.5
+                  ],
+                  [
+                    138.0,
+                    -26.0
+                  ],
+                  [
+                    141.0,
+                    -26.0
+                  ],
+                  [
+                    141.0,
+                    -29.2
+                  ],
+                  [
+                    150.0,
+                    -28.5
+                  ],
+                  [
+                    153.6,
+                    -28.2
+                  ],
+                  [
+                    153.6,
+                    -10.7
+                  ],
+                  [
+                    148.1,
+                    -19.8
+                  ],
+                  [
+                    145.5,
+                    -18.3
+                  ],
+                  [
+                    143.5,
+                    -14.5
+                  ],
+                  [
+                    141.5,
+                    -12.5
+                  ],
+                  [
+                    138.0,
+                    -16.5
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "South Australia",
+              "pct": 29.3,
+              "abbr": "SA"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    129.0,
+                    -26.0
+                  ],
+                  [
+                    138.0,
+                    -26.0
+                  ],
+                  [
+                    141.0,
+                    -26.0
+                  ],
+                  [
+                    141.0,
+                    -34.0
+                  ],
+                  [
+                    141.0,
+                    -38.5
+                  ],
+                  [
+                    139.2,
+                    -38.5
+                  ],
+                  [
+                    137.8,
+                    -35.6
+                  ],
+                  [
+                    136.6,
+                    -35.6
+                  ],
+                  [
+                    135.5,
+                    -35.1
+                  ],
+                  [
+                    134.2,
+                    -33.0
+                  ],
+                  [
+                    132.5,
+                    -32.5
+                  ],
+                  [
+                    131.0,
+                    -31.6
+                  ],
+                  [
+                    129.0,
+                    -31.6
+                  ],
+                  [
+                    129.0,
+                    -26.0
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Western Australia",
+              "pct": 29.9,
+              "abbr": "WA"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    129.0,
+                    -13.5
+                  ],
+                  [
+                    129.0,
+                    -26.0
+                  ],
+                  [
+                    129.0,
+                    -31.6
+                  ],
+                  [
+                    131.0,
+                    -31.6
+                  ],
+                  [
+                    132.5,
+                    -32.5
+                  ],
+                  [
+                    134.2,
+                    -33.0
+                  ],
+                  [
+                    129.0,
+                    -34.5
+                  ],
+                  [
+                    115.5,
+                    -34.0
+                  ],
+                  [
+                    113.9,
+                    -22.5
+                  ],
+                  [
+                    114.2,
+                    -21.8
+                  ],
+                  [
+                    118.0,
+                    -20.3
+                  ],
+                  [
+                    121.3,
+                    -19.5
+                  ],
+                  [
+                    126.6,
+                    -15.8
+                  ],
+                  [
+                    129.0,
+                    -13.5
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Tasmania",
+              "pct": 26.8,
+              "abbr": "TAS"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    144.5,
+                    -40.5
+                  ],
+                  [
+                    148.3,
+                    -40.5
+                  ],
+                  [
+                    148.5,
+                    -43.6
+                  ],
+                  [
+                    147.6,
+                    -43.3
+                  ],
+                  [
+                    146.3,
+                    -43.3
+                  ],
+                  [
+                    144.5,
+                    -42.7
+                  ],
+                  [
+                    144.5,
+                    -40.5
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Northern Territory",
+              "pct": 31.1,
+              "abbr": "NT"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    129.0,
+                    -16.5
+                  ],
+                  [
+                    138.0,
+                    -16.5
+                  ],
+                  [
+                    138.0,
+                    -26.0
+                  ],
+                  [
+                    129.0,
+                    -26.0
+                  ],
+                  [
+                    129.0,
+                    -13.5
+                  ],
+                  [
+                    129.0,
+                    -16.5
+                  ]
+                ]
+              ]
+            }
+          },
+          {
+            "type": "Feature",
+            "properties": {
+              "STATE_NAME": "Australian Capital Territory",
+              "pct": 25.7,
+              "abbr": "ACT"
+            },
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    148.8,
+                    -35.1
+                  ],
+                  [
+                    149.4,
+                    -35.1
+                  ],
+                  [
+                    149.4,
+                    -35.9
+                  ],
+                  [
+                    148.8,
+                    -35.9
+                  ],
+                  [
+                    148.8,
+                    -35.1
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
       },
-      "mark": {"type": "geoshape", "fill": "#f5e6c8", "stroke": "white", "strokeWidth": 1.5}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f5e6c8",
+        "stroke": "white",
+        "strokeWidth": 1.5
+      }
     },
     {
       "data": {
         "values": [
-          {"state": "NSW", "lon": 146.5, "lat": -32.5, "daily": 4.8},
-          {"state": "VIC", "lon": 144.5, "lat": -37.0, "daily": 4.0},
-          {"state": "QLD", "lon": 144.5, "lat": -22.5, "daily": 5.6},
-          {"state": "SA",  "lon": 135.0, "lat": -30.0, "daily": 5.5},
-          {"state": "WA",  "lon": 121.5, "lat": -26.0, "daily": 5.8},
-          {"state": "TAS", "lon": 146.5, "lat": -42.0, "daily": 5.2},
-          {"state": "NT",  "lon": 133.0, "lat": -19.5, "daily": 7.2},
-          {"state": "ACT", "lon": 149.1, "lat": -35.5, "daily": 4.5}
+          {
+            "state": "NSW",
+            "lon": 146.5,
+            "lat": -32.5,
+            "daily": 4.8
+          },
+          {
+            "state": "VIC",
+            "lon": 144.5,
+            "lat": -37.0,
+            "daily": 4.0
+          },
+          {
+            "state": "QLD",
+            "lon": 144.5,
+            "lat": -22.5,
+            "daily": 5.6
+          },
+          {
+            "state": "SA",
+            "lon": 135.0,
+            "lat": -30.0,
+            "daily": 5.5
+          },
+          {
+            "state": "WA",
+            "lon": 121.5,
+            "lat": -26.0,
+            "daily": 5.8
+          },
+          {
+            "state": "TAS",
+            "lon": 146.5,
+            "lat": -42.0,
+            "daily": 5.2
+          },
+          {
+            "state": "NT",
+            "lon": 133.0,
+            "lat": -19.5,
+            "daily": 7.2
+          },
+          {
+            "state": "ACT",
+            "lon": 149.1,
+            "lat": -35.5,
+            "daily": 4.5
+          }
         ]
       },
-      "mark": {"type": "circle", "opacity": 0.75, "stroke": "white", "strokeWidth": 2, "color": "#D4692A"},
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "white",
+        "strokeWidth": 2,
+        "color": "#D4692A"
+      },
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude":  {"field": "lat", "type": "quantitative"},
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
         "size": {
           "field": "daily",
           "type": "quantitative",
-          "scale": {"domain": [3, 8], "range": [300, 3500]},
-          "legend": {"title": "Daily Drinkers (%)", "labelFont": "DM Sans", "titleFont": "DM Sans"}
+          "scale": {
+            "domain": [
+              3,
+              8
+            ],
+            "range": [
+              300,
+              3500
+            ]
+          },
+          "legend": {
+            "title": "Daily Drinkers (%)",
+            "labelFont": "DM Sans",
+            "titleFont": "DM Sans"
+          }
         },
         "tooltip": [
-          {"field": "state", "title": "State"},
-          {"field": "daily", "title": "Daily drinkers %", "format": ".1f"}
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "daily",
+            "title": "Daily drinkers %",
+            "format": ".1f"
+          }
         ]
       }
     },
     {
       "data": {
         "values": [
-          {"state": "NSW", "lon": 146.5, "lat": -32.5},
-          {"state": "VIC", "lon": 144.5, "lat": -37.0},
-          {"state": "QLD", "lon": 144.5, "lat": -22.5},
-          {"state": "SA",  "lon": 135.0, "lat": -30.0},
-          {"state": "WA",  "lon": 121.5, "lat": -26.0},
-          {"state": "TAS", "lon": 146.5, "lat": -42.0},
-          {"state": "NT",  "lon": 133.0, "lat": -19.5},
-          {"state": "ACT", "lon": 149.1, "lat": -35.5}
+          {
+            "s": "NSW",
+            "lon": 146.5,
+            "lat": -32.5
+          },
+          {
+            "s": "VIC",
+            "lon": 144.5,
+            "lat": -37.0
+          },
+          {
+            "s": "QLD",
+            "lon": 144.5,
+            "lat": -22.5
+          },
+          {
+            "s": "SA",
+            "lon": 135.0,
+            "lat": -30.0
+          },
+          {
+            "s": "WA",
+            "lon": 121.5,
+            "lat": -26.0
+          },
+          {
+            "s": "TAS",
+            "lon": 146.5,
+            "lat": -42.0
+          },
+          {
+            "s": "NT",
+            "lon": 133.0,
+            "lat": -19.5
+          },
+          {
+            "s": "ACT",
+            "lon": 149.1,
+            "lat": -35.5
+          }
         ]
       },
-      "mark": {"type": "text", "fontSize": 11, "fontWeight": "bold", "font": "DM Sans", "color": "#3D2B0F", "dy": -18},
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "font": "DM Sans",
+        "color": "#3D2B0F",
+        "dy": -20
+      },
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude":  {"field": "lat", "type": "quantitative"},
-        "text":      {"field": "state", "type": "nominal"}
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "s",
+          "type": "nominal"
+        }
       }
     }
   ],
-  "config": {"view": {"stroke": null}, "background": "transparent"}
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "transparent"
+  }
 }
