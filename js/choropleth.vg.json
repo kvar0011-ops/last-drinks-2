@@ -1,59 +1,51 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {"text": "Risky Drinking by State & Territory, 2022", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
+  "title": {
+    "text": "Risky Drinking by State & Territory, 2022",
+    "fontSize": 15,
+    "font": "DM Sans",
+    "color": "#1C1208",
+    "anchor": "start"
+  },
   "width": "container",
-  "height": 340,
+  "height": 360,
   "projection": {"type": "mercator"},
-  "layer": [
+  "data": {
+    "url": "js/australia_states.json",
+    "format": {"type": "json", "property": "features"}
+  },
+  "transform": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
-      },
-      "transform": [{"filter": "datum.properties.NAME === 'Australia'"}],
-      "mark": {"type": "geoshape", "fill": "#f5e6c8", "stroke": "#c8b88a", "strokeWidth": 0.5}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/ne_110m_graticules_30.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
-      },
-      "mark": {"type": "geoshape", "fill": null, "stroke": "#ddd", "strokeWidth": 0.3}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/4_interactive_scatter_plot/js/WorldMapWithGraticules.topojson",
-        "format": {"type": "topojson", "feature": "ne_110m_admin_1_states_provinces"}
-      },
-      "transform": [
-        {
-          "lookup": "properties.name",
-          "from": {
-            "data": {"url": "data/by_state.csv"},
-            "key": "state",
-            "fields": ["exceeded_pct", "state_abbr"]
-          }
-        },
-        {"filter": "datum.exceeded_pct != null"}
-      ],
-      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.8},
-      "encoding": {
-        "color": {
-          "field": "exceeded_pct",
-          "type": "quantitative",
-          "scale": {
-            "type": "threshold",
-            "domain": [24, 27, 29, 31],
-            "range": ["#fde8c8", "#f5c88a", "#e09040", "#c86810", "#8B4500"]
-          },
-          "legend": {"title": "% Exceeding Guidelines", "orient": "bottom", "gradientLength": 160, "labelFont": "DM Sans", "titleFont": "DM Sans"}
-        },
-        "tooltip": [
-          {"field": "properties.name", "title": "State/Territory"},
-          {"field": "exceeded_pct", "title": "% Exceeding Guideline", "format": ".1f"}
-        ]
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {"url": "data/by_state.csv"},
+        "key": "state",
+        "fields": ["exceeded_pct", "state_abbr"]
       }
     }
   ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
+  "encoding": {
+    "color": {
+      "field": "exceeded_pct",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [24, 27, 29, 31],
+        "range": ["#fde8c8", "#f5c88a", "#e09040", "#c86810", "#8B4500"]
+      },
+      "legend": {
+        "title": "% Exceeding Guidelines",
+        "orient": "bottom",
+        "gradientLength": 200,
+        "labelFont": "DM Sans",
+        "titleFont": "DM Sans"
+      }
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "title": "State/Territory"},
+      {"field": "exceeded_pct", "title": "% Exceeding Guideline", "format": ".1f"}
+    ]
+  },
   "config": {"view": {"stroke": null}, "background": "transparent"}
 }
