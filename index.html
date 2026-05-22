@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Last Drinks — Australia's Drinking Culture</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+ 
 <!-- Vega-Lite libraries — exact pattern from FIT3179 Week 7 workshop -->
 <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-
+ 
 <style>
 :root {
   --cream: #F5EFE0; --paper: #FAF6EE; --dark: #1C1208; --brown: #3D2B0F;
@@ -18,7 +18,7 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:var(--paper); color:var(--dark); font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.75; }
-
+ 
 /* HERO */
 .hero { background:var(--dark); color:var(--cream); min-height:460px; display:flex; align-items:center; justify-content:center; text-align:center; padding:60px 40px; }
 .hero-eyebrow { font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:16px; font-weight:500; }
@@ -28,12 +28,12 @@ body { background:var(--paper); color:var(--dark); font-family:'DM Sans',sans-se
 .hero-stats { display:flex; gap:64px; justify-content:center; flex-wrap:wrap; }
 .stat-num { font-family:'Playfair Display',serif; font-size:44px; font-weight:700; color:var(--gold); display:block; }
 .stat-label { font-size:11px; color:rgba(245,239,224,0.5); text-transform:uppercase; letter-spacing:0.1em; }
-
+ 
 /* ACT DIVIDERS */
 .act-divider { display:flex; align-items:center; gap:20px; padding:48px 60px 0; }
 .act-divider::before,.act-divider::after { content:''; flex:1; height:1px; background:var(--border); }
 .act-label { font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--muted); white-space:nowrap; font-weight:500; }
-
+ 
 /* LAYOUT */
 .page-wrap { max-width:1100px; margin:0 auto; padding:0 48px; }
 .section { padding:48px 0; }
@@ -41,41 +41,41 @@ body { background:var(--paper); color:var(--dark); font-family:'DM Sans',sans-se
 .section-eyebrow { font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; font-weight:600; }
 .section-title { font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); font-weight:700; line-height:1.15; margin-bottom:16px; }
 .section-intro { font-size:16px; color:var(--muted); max-width:680px; margin-bottom:36px; font-weight:300; line-height:1.8; }
-
+ 
 /* TWO-COL LAYOUTS */
 .two-col { display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start; margin-bottom:32px; }
 .two-col.wide { grid-template-columns:2fr 3fr; }
 .two-col.wide-rev { grid-template-columns:3fr 2fr; }
 @media(max-width:780px){ .two-col,.two-col.wide,.two-col.wide-rev { grid-template-columns:1fr; } }
-
+ 
 .col-text { padding-top:8px; }
 .col-text h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; margin-bottom:12px; line-height:1.3; }
 .col-text p { font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:12px; }
 .col-text p strong { color:var(--dark); font-weight:600; }
-
+ 
 /* CHART CARDS */
 .chart-card { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:24px; overflow:hidden; margin-bottom:28px; }
 .chart-card.no-margin { margin-bottom:0; }
 .chart-desc { font-size:13px; color:var(--muted); margin-bottom:16px; line-height:1.5; }
 .chart-source { font-size:11px; color:var(--muted); margin-top:12px; font-style:italic; }
-
+ 
 /* VEGA CHART CONTAINERS — must have width:100% for "container" to work */
 .vega-chart { width:100%; }
-
+ 
 /* PULL QUOTE */
 .pullquote { font-family:'Playfair Display',serif; font-size:clamp(18px,2.5vw,26px); font-style:italic; color:var(--brown); border-left:4px solid var(--gold); padding:20px 28px; margin:32px 0; line-height:1.55; background:rgba(184,132,26,0.06); border-radius:0 8px 8px 0; }
-
+ 
 /* CALLOUT */
 .callout { background:rgba(184,132,26,0.09); border-left:4px solid var(--gold); border-radius:0 8px 8px 0; padding:16px 22px; margin:24px 0; font-size:15px; color:var(--brown); line-height:1.7; }
 .callout strong { color:var(--dark); }
-
+ 
 /* WAFFLE */
 #waffle-wrap { display:flex; flex-wrap:wrap; gap:3px; margin:12px 0; }
 .w-cell { width:16px; height:16px; border-radius:2px; }
 .waffle-leg { display:flex; flex-wrap:wrap; gap:8px 20px; margin-top:10px; font-size:12px; }
 .waffle-leg-item { display:flex; align-items:center; gap:5px; }
 .waffle-dot { width:11px; height:11px; border-radius:2px; flex-shrink:0; }
-
+ 
 /* DUMBBELL */
 .db-row { display:flex; align-items:center; gap:8px; margin-bottom:11px; font-size:12px; }
 .db-lbl { width:32px; text-align:right; color:var(--muted); font-size:11px; font-weight:600; }
@@ -84,50 +84,50 @@ body { background:var(--paper); color:var(--dark); font-family:'DM Sans',sans-se
 .db-track { flex:1; height:2px; background:#ebe0c8; position:relative; }
 .db-line { position:absolute; top:0; height:2px; }
 .db-dot { position:absolute; width:12px; height:12px; border-radius:50%; top:-5px; transform:translateX(-50%); border:2px solid white; box-shadow:0 1px 3px rgba(0,0,0,0.2); }
-
+ 
 /* DOT PLOT */
 .dp-row { display:flex; align-items:center; gap:8px; margin-bottom:10px; }
 .dp-lbl { width:34px; color:var(--muted); font-size:11px; font-weight:600; }
 .dp-track { flex:1; height:2px; background:#ebe0c8; position:relative; }
 .dp-val { width:40px; font-size:12px; font-weight:600; }
-
+ 
 /* HEATMAP */
 .htable { width:100%; border-collapse:collapse; font-size:11px; }
 .htable th { padding:5px 6px; font-size:10px; color:var(--muted); text-align:center; font-weight:600; letter-spacing:0.04em; }
 .htable td { padding:6px 4px; text-align:center; border-radius:3px; font-weight:600; font-size:11px; cursor:default; transition:transform .15s; }
 .htable td:hover { transform:scale(1.15); z-index:10; position:relative; }
 .htable .rl { text-align:left; color:var(--muted); background:transparent!important; padding-right:8px; font-weight:400; }
-
+ 
 /* AWARENESS */
 .aware-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
 .aware-lbl { width:160px; flex-shrink:0; color:var(--muted); font-size:12px; }
 .aware-track { flex:1; background:#ebe0c8; border-radius:99px; height:28px; overflow:hidden; }
 .aware-fill { height:100%; border-radius:99px; display:flex; align-items:center; justify-content:flex-end; padding-right:10px; font-size:12px; font-weight:600; color:white; }
-
+ 
 /* TREEMAP */
 .treemap-grid { display:grid; grid-template-columns:2.5fr 2fr 1fr; gap:5px; }
 .tm-cell { border-radius:8px; padding:14px 16px; display:flex; flex-direction:column; justify-content:flex-end; color:white; }
 .tm-val { font-size:22px; font-weight:700; font-family:'Playfair Display',serif; }
 .tm-lbl { font-size:12px; opacity:0.9; margin-top:2px; line-height:1.3; }
 .tm-pct { font-size:11px; opacity:0.65; margin-top:2px; }
-
+ 
 /* SLOPE */
 #slope-svg { width:100%; display:block; }
-
+ 
 /* PHOTO BREAK */
 .photo-break { position:relative; height:300px; overflow:hidden; }
 .photo-break img { width:100%; height:100%; object-fit:cover; filter:brightness(0.45); }
 .photo-break-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:var(--cream); width:80%; }
 .photo-break-text p { font-family:'Playfair Display',serif; font-size:clamp(20px,3vw,32px); font-style:italic; line-height:1.45; }
 .photo-break-caption { position:absolute; bottom:14px; left:40px; font-size:11px; color:rgba(245,239,224,0.45); font-style:italic; }
-
+ 
 /* FOOTER */
 footer { background:var(--dark); color:rgba(245,239,224,0.4); padding:44px; text-align:center; font-size:12px; line-height:2.2; }
 footer strong { color:var(--gold); }
 </style>
 </head>
 <body>
-
+ 
 <!-- HERO -->
 <div class="hero">
   <div>
@@ -141,14 +141,14 @@ footer strong { color:var(--gold); }
     </div>
   </div>
 </div>
-
+ 
 <!-- ACT I -->
 <div class="act-divider"><span class="act-label">Act I · The Scale of It</span></div>
 <div class="page-wrap">
 <div class="section">
   <p class="section-eyebrow">The Big Picture</p>
   <h2 class="section-title">One in four Australians<br>drinks above safe limits</h2>
-
+ 
   <div class="two-col wide">
     <div class="col-text">
       <h3>How often do Australians drink?</h3>
@@ -165,11 +165,11 @@ footer strong { color:var(--gold); }
       <p class="chart-source">Source: AIHW Alcohol Available for Consumption in Australia, 2025</p>
     </div>
   </div>
-
+ 
   <div class="pullquote">"The 2023–24 drop was the largest single-year decline in per capita alcohol availability since records began in 1960."</div>
 </div>
 </div>
-
+ 
 <!-- ACT II -->
 <div class="act-divider"><span class="act-label">Act II · Where Australia Drinks</span></div>
 <div class="page-wrap">
@@ -177,22 +177,21 @@ footer strong { color:var(--gold); }
   <p class="section-eyebrow">Geography of Drinking</p>
   <h2 class="section-title">The NT leads. Victoria trails.<br>But all states have improved since 2007.</h2>
   <p class="section-intro">Risky alcohol consumption varies significantly by state and territory. The Northern Territory records the highest rate at 31.1%, while Victoria has the lowest at 23.8%. Crucially, every single state has reduced risky drinking compared to 2007.</p>
-
-  <div class="two-col">
-    <div class="chart-card no-margin">
-      <p class="chart-desc">% of adults exceeding NHMRC guidelines per state/territory. Darker shading = higher proportion at risk.</p>
-      <div id="choropleth_map" class="vega-chart"></div>
-      <p class="chart-source">Source: ABS National Health Survey 2022</p>
-    </div>
-    <div>
-      <div class="chart-card" style="margin-bottom:20px">
-        <p class="chart-desc">Each dot is a state. The amber line marks the national average (26.8%). Green = below average, amber = above.</p>
-        <div id="dotplot" style="padding:8px 0"></div>
-        <p class="chart-source">Source: ABS National Health Survey 2022</p>
-      </div>
-    </div>
+ 
+  <!-- CHOROPLETH FULL WIDTH -->
+  <div class="chart-card" style="margin-bottom:28px">
+    <p class="chart-desc">% of adults exceeding NHMRC guidelines per state/territory. Darker shading = higher proportion at risk. Hover over a state for the exact figure.</p>
+    <div id="choropleth_map" class="vega-chart"></div>
+    <p class="chart-source">Source: ABS National Health Survey 2022</p>
   </div>
-
+ 
+  <!-- DOT PLOT BELOW -->
+  <div class="chart-card" style="margin-bottom:28px">
+    <p class="chart-desc">Each dot is a state. The amber line marks the national average (26.8%). Green = below average, amber = above.</p>
+    <div id="dotplot" style="padding:8px 0"></div>
+    <p class="chart-source">Source: ABS National Health Survey 2022</p>
+  </div>
+ 
   <div class="chart-card">
     <p class="chart-desc">Dumbbell chart — grey dot = 2007 rate, amber dot = 2022 rate. Every state moved left — all states improved.</p>
     <div id="dumbbell" style="padding:12px 0"></div>
@@ -203,7 +202,7 @@ footer strong { color:var(--gold); }
     </div>
     <p class="chart-source">Source: AIHW NDSHS 2007 & ABS NHS 2022</p>
   </div>
-
+ 
   <div class="chart-card">
     <p class="chart-desc">Circle size = % of adults who drink daily. The NT has more than double the daily drinking rate of Victoria.</p>
     <div id="symbol_map" class="vega-chart"></div>
@@ -211,21 +210,21 @@ footer strong { color:var(--gold); }
   </div>
 </div>
 </div>
-
+ 
 <!-- PHOTO BREAK -->
 <div class="photo-break">
   <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=1400&q=80" onerror="this.style.background='#2C1A06'" alt="Beer glasses"/>
   <div class="photo-break-text"><p>"Beer dominated Australian drinking for most of the 20th century — until wine overtook it in 2014."</p></div>
   <p class="photo-break-caption">Source: Unsplash (free use)</p>
 </div>
-
+ 
 <!-- ACT III -->
 <div class="act-divider"><span class="act-label">Act III · What We Drink</span></div>
 <div class="page-wrap">
 <div class="section">
   <p class="section-eyebrow">The Changing Glass</p>
   <h2 class="section-title">Wine overtook beer in 2014.<br>Spirits are surging. RTDs collapsed.</h2>
-
+ 
   <div class="two-col wide-rev">
     <div class="chart-card no-margin">
       <p class="chart-desc">Stacked area: each band shows one beverage's share of total consumption. Watch wine overtake beer around 2014–15.</p>
@@ -244,7 +243,7 @@ footer strong { color:var(--gold); }
       </div>
     </div>
   </div>
-
+ 
   <div class="chart-card">
     <p class="chart-desc">Normalised stacked bar: mid-strength beer has grown from 11% to 39% of all beer since 2000. Full-strength steadily declined.</p>
     <div id="beer_strength" class="vega-chart"></div>
@@ -252,20 +251,20 @@ footer strong { color:var(--gold); }
   </div>
 </div>
 </div>
-
+ 
 <!-- ACT IV -->
 <div class="act-divider"><span class="act-label">Act IV · Who Drinks</span></div>
 <div class="page-wrap">
 <div class="section">
   <p class="section-eyebrow">Demographics of Drinking</p>
   <h2 class="section-title">Young Australians binge.<br>Older men drink steadily — and too much.</h2>
-
+ 
   <div class="chart-card">
     <p class="chart-desc">% of adults exceeding NHMRC guidelines in 2022. Males in amber, females in gold. Young adults aged 18–24 show highest rates through binge drinking; males aged 55–64 show high chronic consumption.</p>
     <div id="grouped_bar" class="vega-chart"></div>
     <p class="chart-source">Source: ABS National Health Survey 2022</p>
   </div>
-
+ 
   <div class="two-col">
     <div class="chart-card no-margin">
       <p class="chart-desc">% of adults who drink daily by age group and state. Darker amber = higher rate. NT and older age groups are the highest-risk combination nationally.</p>
@@ -278,18 +277,18 @@ footer strong { color:var(--gold); }
       <p class="chart-source">Source: AIHW NDSHS 2022–23</p>
     </div>
   </div>
-
+ 
   <div class="pullquote">"69% of risky drinkers know the guidelines exist — and drink beyond them anyway."</div>
 </div>
 </div>
-
+ 
 <!-- ACT V -->
 <div class="act-divider"><span class="act-label">Act V · The Cost</span></div>
 <div class="page-wrap">
 <div class="section">
   <p class="section-eyebrow">Human & Economic Cost</p>
   <h2 class="section-title">$72.9 billion a year.<br>Alcohol is Australia's most expensive habit.</h2>
-
+ 
   <div class="two-col wide">
     <div class="col-text">
       <h3>A staggering social burden</h3>
@@ -302,7 +301,7 @@ footer strong { color:var(--gold); }
       <p class="chart-source">Source: Gadsden et al. 2024 / AIHW 2025</p>
     </div>
   </div>
-
+ 
   <div class="two-col" style="margin-top:28px">
     <div class="chart-card no-margin">
       <p class="chart-desc">Total alcohol-related hospital admissions per year. COVID-19 caused a spike in 2020–21 with 88,420 admissions.</p>
@@ -315,27 +314,27 @@ footer strong { color:var(--gold); }
       <p class="chart-source">Source: AIHW AODTS Annual Report 2023–24</p>
     </div>
   </div>
-
+ 
   <div class="callout" style="margin-top:24px">
     <strong>Key insight:</strong> Almost 3 in 5 drug-related hospitalisations in 2023–24 involved alcohol — more than cannabis, methamphetamine, and heroin combined. Alcohol is by far Australia's most harmful legal substance.
   </div>
 </div>
 </div>
-
+ 
 <!-- PHOTO BREAK 2 -->
 <div class="photo-break">
   <img src="https://images.unsplash.com/photo-1470338745628-171cf53de3a8?w=1400&q=80" onerror="this.style.background='#1C1208'" alt="Bar at night"/>
   <div class="photo-break-text"><p>"Alcohol is Australia's most costly legal substance — but consumption is finally falling."</p></div>
   <p class="photo-break-caption">Source: Unsplash (free use)</p>
 </div>
-
+ 
 <!-- ACT VI -->
 <div class="act-divider"><span class="act-label">Act VI · The Long View</span></div>
 <div class="page-wrap">
 <div class="section">
   <p class="section-eyebrow">Trends Over Time</p>
   <h2 class="section-title">Two decades of data —<br>Australia is slowly sobering up</h2>
-
+ 
   <div class="two-col wide-rev">
     <div class="chart-card no-margin">
       <p class="chart-desc">% consuming alcohol at risky levels over two decades. Males consistently higher; both sexes show the long-term declining trend with a notable spike in the 2022 survey.</p>
@@ -348,18 +347,53 @@ footer strong { color:var(--gold); }
       <p>Among <strong>18–24 year-olds</strong>, the shift is most pronounced. Drinking less is becoming the cultural norm, driven by cost-of-living pressure, growing health awareness, and a boom in alcohol-free alternatives.</p>
     </div>
   </div>
-
+ 
   <div class="pullquote">"Among 18–24 year-olds, the cultural attitude toward alcohol has shifted. Drinking less is no longer unusual — it's becoming the norm."</div>
 </div>
 </div>
-
+ 
+<!-- ACT NEW: Additional Charts -->
+<div class="act-divider"><span class="act-label">Act VII · Deeper Insights</span></div>
+<div class="page-wrap">
+<div class="section">
+  <p class="section-eyebrow">More Analysis</p>
+  <h2 class="section-title">Four more ways to see<br>Australia's drinking story</h2>
+ 
+  <div class="two-col" style="margin-bottom:28px">
+    <div class="chart-card no-margin">
+      <p class="chart-desc">Bubble chart: each bubble = one sex/age group. Size and position both show % exceeding guidelines.</p>
+      <div id="bubble_chart" class="vega-chart"></div>
+      <p class="chart-source">Source: ABS National Health Survey 2022</p>
+    </div>
+    <div class="chart-card no-margin">
+      <p class="chart-desc">Lollipop chart: how far each state sits above or below the national average of 26.8%.</p>
+      <div id="lollipop_chart" class="vega-chart"></div>
+      <p class="chart-source">Source: ABS National Health Survey 2022</p>
+    </div>
+  </div>
+ 
+  <div class="two-col">
+    <div class="chart-card no-margin">
+      <p class="chart-desc">Radial/donut chart: the $72.9B social cost of alcohol broken into categories. Premature mortality is the largest slice.</p>
+      <div id="radial_chart" class="vega-chart"></div>
+      <p class="chart-source">Source: Gadsden et al. 2024 / AIHW 2025</p>
+    </div>
+    <div class="chart-card no-margin">
+      <p class="chart-desc">Heatmap: risky drinking % by age group across survey years. Younger age groups show the biggest improvement.</p>
+      <div id="heatmap_chart" class="vega-chart"></div>
+      <p class="chart-source">Source: AIHW NDSHS 2007–2022</p>
+    </div>
+  </div>
+</div>
+</div>
+ 
 <!-- FOOTER -->
 <footer>
   <p><strong>Last Drinks: Australia's Drinking Culture</strong> — FIT2179 Data Visualisation 2, Semester 1, 2026</p>
   <p><strong>Data sources:</strong> AIHW — Alcohol Available for Consumption in Australia (2025) · AIHW — National Drug Strategy Household Survey 2022–23 · AIHW — AODTS Annual Report 2023–24 · AIHW — National Hospital Morbidity Database 2023–24 · ABS — National Health Survey 2022 · Gadsden et al. (2024)</p>
   <p>Images: Unsplash (free use). Visualisation by Krishneelesh Varma · May 2026 · Built with Vega-Lite v5</p>
 </footer>
-
+ 
 <!-- JAVASCRIPT — following exact FIT3179 Week 7 workshop pattern -->
 <script>
 // Workshop pattern: vegaEmbed("#div_id", "js/chart.vg.json").then(...).catch(console.error)
@@ -371,8 +405,12 @@ vegaEmbed("#hospitalisations", "js/hospitalisations.vg.json").catch(console.erro
 vegaEmbed("#treatment", "js/treatment.vg.json").catch(console.error);
 vegaEmbed("#risky_trend", "js/risky_trend.vg.json").catch(console.error);
 vegaEmbed("#choropleth_map", "js/choropleth.vg.json").catch(console.error);
+vegaEmbed("#bubble_chart", "js/bubble_chart.vg.json").catch(console.error);
+vegaEmbed("#lollipop_chart", "js/lollipop.vg.json").catch(console.error);
+vegaEmbed("#radial_chart", "js/radial.vg.json").catch(console.error);
+vegaEmbed("#heatmap_chart", "js/heatmap_vega.vg.json").catch(console.error);
 vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
-
+ 
 // ── WAFFLE (custom HTML — not possible in Vega-Lite) ─────────────────────────
 (function(){
   var cats=[{l:"Daily",p:5,c:"#B8841A"},{l:"Weekly (not daily)",p:36,c:"#D4692A"},
@@ -386,7 +424,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
     leg.innerHTML+="<div class='waffle-leg-item'><div class='waffle-dot' style='background:"+c.c+"'></div><span>"+c.l+" <strong>"+c.p+"%</strong></span></div>";
   });
 })();
-
+ 
 // ── DOT PLOT (custom HTML) ────────────────────────────────────────────────────
 (function(){
   var stateData=[
@@ -408,7 +446,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
   });
   el.innerHTML+="<div style='display:flex;gap:16px;margin-top:12px;font-size:11px;color:#7A6040'><span><span style='color:#D4692A'>●</span> Above national avg</span><span><span style='color:#3D7A2A'>●</span> Below national avg</span></div>";
 })();
-
+ 
 // ── DUMBBELL (custom HTML) ────────────────────────────────────────────────────
 (function(){
   var stateData=[
@@ -431,7 +469,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
       +"</div><span class='db-val-r'>"+d.p22+"%</span></div>";
   });
 })();
-
+ 
 // ── SLOPE CHART (SVG — custom idiom not possible in Vega-Lite) ────────────────
 (function(){
   var svg=document.getElementById("slope-svg");
@@ -452,7 +490,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
   });
   svg.innerHTML=s;
 })();
-
+ 
 // ── HEATMAP (custom HTML table) ───────────────────────────────────────────────
 (function(){
   var hmS=["NSW","VIC","QLD","SA","WA","TAS","NT","ACT"];
@@ -476,7 +514,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
   h+="</table>";
   document.getElementById("heatmap").innerHTML=h;
 })();
-
+ 
 // ── AWARENESS BARS (custom HTML) ──────────────────────────────────────────────
 (function(){
   var awD=[{l:"Risky drinkers",v:69,c:"#D4692A"},{l:"Non-risky drinkers",v:66,c:"#B8841A"},{l:"Non-drinkers",v:45,c:"#7AA65A"}];
@@ -487,7 +525,7 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
   h+="<p style='font-size:11px;color:#7A6040;margin-top:10px'>% aware Australia has official alcohol guidelines</p>";
   document.getElementById("awareness").innerHTML=h;
 })();
-
+ 
 // ── TREEMAP (custom HTML — proportional grid) ─────────────────────────────────
 (function(){
   var tm=[
@@ -504,3 +542,4 @@ vegaEmbed("#symbol_map", "js/symbol_map.vg.json").catch(console.error);
 </script>
 </body>
 </html>
+ 
