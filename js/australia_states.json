@@ -1,1 +1,437 @@
-{"type": "FeatureCollection", "features": [{"type": "Feature", "properties": {"STATE_NAME": "New South Wales"}, "geometry": {"type": "Polygon", "coordinates": [[[141.0, -29.0], [153.6, -28.2], [153.6, -37.5], [150.7, -38.0], [149.0, -37.5], [148.3, -37.5], [145.5, -38.0], [144.0, -37.5], [141.0, -34.0], [141.0, -29.0]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Victoria"}, "geometry": {"type": "Polygon", "coordinates": [[[141.0, -34.0], [144.0, -37.5], [145.5, -38.0], [148.3, -37.5], [149.0, -37.5], [150.7, -38.0], [149.5, -38.7], [148.0, -38.5], [146.0, -39.0], [144.5, -38.8], [141.0, -38.5], [141.0, -34.0]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Queensland"}, "geometry": {"type": "Polygon", "coordinates": [[[138.0, -26.0], [141.0, -26.0], [141.0, -29.0], [153.6, -28.2], [153.6, -10.7], [148.0, -19.8], [145.5, -18.3], [143.5, -14.5], [141.5, -12.5], [138.0, -16.5], [138.0, -26.0]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "South Australia"}, "geometry": {"type": "Polygon", "coordinates": [[[129.0, -26.0], [138.0, -26.0], [138.0, -34.5], [141.0, -34.0], [141.0, -38.5], [140.0, -38.5], [139.0, -36.5], [137.5, -35.7], [136.5, -35.6], [135.5, -35.1], [134.0, -33.0], [132.5, -32.5], [131.0, -31.5], [129.0, -31.5], [129.0, -26.0]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Western Australia"}, "geometry": {"type": "Polygon", "coordinates": [[[129.0, -13.5], [129.0, -26.0], [129.0, -31.5], [131.0, -31.5], [132.5, -32.5], [129.0, -33.5], [115.5, -34.0], [113.5, -25.5], [113.5, -22.5], [114.0, -21.8], [118.0, -20.3], [121.5, -19.5], [126.0, -14.0], [129.0, -13.5]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Tasmania"}, "geometry": {"type": "Polygon", "coordinates": [[[144.5, -40.5], [148.3, -40.5], [148.5, -43.6], [145.5, -43.5], [144.5, -40.5]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Northern Territory"}, "geometry": {"type": "Polygon", "coordinates": [[[129.0, -16.5], [138.0, -16.5], [138.0, -26.0], [129.0, -26.0], [129.0, -13.5], [129.0, -16.5]]]}}, {"type": "Feature", "properties": {"STATE_NAME": "Australian Capital Territory"}, "geometry": {"type": "Polygon", "coordinates": [[[148.7, -35.1], [149.4, -35.1], [149.4, -35.9], [148.7, -35.9], [148.7, -35.1]]]}}]}
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "New South Wales",
+        "exceeded_pct": 26.3,
+        "state_abbr": "NSW"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              141,
+              -29
+            ],
+            [
+              153.6,
+              -28.2
+            ],
+            [
+              153.6,
+              -37.5
+            ],
+            [
+              150.7,
+              -38
+            ],
+            [
+              149,
+              -37.5
+            ],
+            [
+              148.3,
+              -37.5
+            ],
+            [
+              145.5,
+              -38
+            ],
+            [
+              144,
+              -37.5
+            ],
+            [
+              141,
+              -34
+            ],
+            [
+              141,
+              -29
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Victoria",
+        "exceeded_pct": 23.8,
+        "state_abbr": "VIC"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              141,
+              -34
+            ],
+            [
+              144,
+              -37.5
+            ],
+            [
+              145.5,
+              -38
+            ],
+            [
+              148.3,
+              -37.5
+            ],
+            [
+              149,
+              -37.5
+            ],
+            [
+              150.7,
+              -38
+            ],
+            [
+              149.5,
+              -38.7
+            ],
+            [
+              148,
+              -38.5
+            ],
+            [
+              146,
+              -39
+            ],
+            [
+              144.5,
+              -38.8
+            ],
+            [
+              141,
+              -38.5
+            ],
+            [
+              141,
+              -34
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Queensland",
+        "exceeded_pct": 29.4,
+        "state_abbr": "QLD"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              138,
+              -26
+            ],
+            [
+              141,
+              -26
+            ],
+            [
+              141,
+              -29
+            ],
+            [
+              153.6,
+              -28.2
+            ],
+            [
+              153.6,
+              -10.7
+            ],
+            [
+              148,
+              -19.8
+            ],
+            [
+              145.5,
+              -18.3
+            ],
+            [
+              143.5,
+              -14.5
+            ],
+            [
+              141.5,
+              -12.5
+            ],
+            [
+              138,
+              -16.5
+            ],
+            [
+              138,
+              -26
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "South Australia",
+        "exceeded_pct": 29.3,
+        "state_abbr": "SA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              129,
+              -26
+            ],
+            [
+              138,
+              -26
+            ],
+            [
+              138,
+              -34.5
+            ],
+            [
+              141,
+              -34
+            ],
+            [
+              141,
+              -38.5
+            ],
+            [
+              140,
+              -38.5
+            ],
+            [
+              139,
+              -36.5
+            ],
+            [
+              137.5,
+              -35.7
+            ],
+            [
+              136.5,
+              -35.6
+            ],
+            [
+              135.5,
+              -35.1
+            ],
+            [
+              134,
+              -33
+            ],
+            [
+              132.5,
+              -32.5
+            ],
+            [
+              131,
+              -31.5
+            ],
+            [
+              129,
+              -31.5
+            ],
+            [
+              129,
+              -26
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Western Australia",
+        "exceeded_pct": 29.9,
+        "state_abbr": "WA"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              129,
+              -13.5
+            ],
+            [
+              129,
+              -26
+            ],
+            [
+              129,
+              -31.5
+            ],
+            [
+              131,
+              -31.5
+            ],
+            [
+              132.5,
+              -32.5
+            ],
+            [
+              129,
+              -33.5
+            ],
+            [
+              115.5,
+              -34
+            ],
+            [
+              113.5,
+              -25.5
+            ],
+            [
+              113.5,
+              -22.5
+            ],
+            [
+              114,
+              -21.8
+            ],
+            [
+              118,
+              -20.3
+            ],
+            [
+              121.5,
+              -19.5
+            ],
+            [
+              126,
+              -14
+            ],
+            [
+              129,
+              -13.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Tasmania",
+        "exceeded_pct": 26.8,
+        "state_abbr": "TAS"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              144.5,
+              -40.5
+            ],
+            [
+              148.3,
+              -40.5
+            ],
+            [
+              148.5,
+              -43.6
+            ],
+            [
+              145.5,
+              -43.5
+            ],
+            [
+              144.5,
+              -40.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Northern Territory",
+        "exceeded_pct": 31.1,
+        "state_abbr": "NT"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              129,
+              -16.5
+            ],
+            [
+              138,
+              -16.5
+            ],
+            [
+              138,
+              -26
+            ],
+            [
+              129,
+              -26
+            ],
+            [
+              129,
+              -13.5
+            ],
+            [
+              129,
+              -16.5
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "STATE_NAME": "Australian Capital Territory",
+        "exceeded_pct": 25.7,
+        "state_abbr": "ACT"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              148.7,
+              -35.1
+            ],
+            [
+              149.4,
+              -35.1
+            ],
+            [
+              149.4,
+              -35.9
+            ],
+            [
+              148.7,
+              -35.9
+            ],
+            [
+              148.7,
+              -35.1
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
