@@ -1,0 +1,49 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Daily Drinkers by State & Territory, 2022",
+    "fontSize": 15,
+    "font": "DM Sans",
+    "color": "#1C1208",
+    "anchor": "start"
+  },
+  "width": "container",
+  "height": 360,
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "js/australia_states.json",
+        "format": {"type": "json", "property": "features"}
+      },
+      "mark": {"type": "geoshape", "fill": "#f5e6c8", "stroke": "white", "strokeWidth": 1}
+    },
+    {
+      "data": {"url": "data/by_state.csv"},
+      "transform": [
+        {"calculate": "datum.state === 'New South Wales' ? 148.5 : datum.state === 'Victoria' ? 144.9 : datum.state === 'Queensland' ? 144.0 : datum.state === 'South Australia' ? 135.0 : datum.state === 'Western Australia' ? 121.0 : datum.state === 'Tasmania' ? 146.5 : datum.state === 'Northern Territory' ? 133.0 : 149.0", "as": "longitude"},
+        {"calculate": "datum.state === 'New South Wales' ? -32.5 : datum.state === 'Victoria' ? -36.8 : datum.state === 'Queensland' ? -22.0 : datum.state === 'South Australia' ? -30.0 : datum.state === 'Western Australia' ? -25.0 : datum.state === 'Tasmania' ? -42.0 : datum.state === 'Northern Territory' ? -20.0 : -35.3", "as": "latitude"}
+      ],
+      "mark": {"type": "circle", "opacity": 0.8, "stroke": "white", "strokeWidth": 2, "color": "#D4692A"},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "daily_pct",
+          "type": "quantitative",
+          "scale": {"domain": [3, 8], "range": [300, 3500]},
+          "legend": {
+            "title": "Daily Drinkers (%)",
+            "labelFont": "DM Sans",
+            "titleFont": "DM Sans"
+          }
+        },
+        "tooltip": [
+          {"field": "state", "title": "State/Territory"},
+          {"field": "daily_pct", "title": "Daily drinkers %", "format": ".1f"}
+        ]
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}, "background": "transparent"}
+}
