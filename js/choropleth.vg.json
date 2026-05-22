@@ -2,7 +2,8 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {"text": "Risky Drinking by State & Territory, 2022", "fontSize": 15, "font": "DM Sans", "color": "#1C1208", "anchor": "start"},
   "width": "container",
-  "height": 420,
+  "height": 500,
+  "projection": {"type": "mercator", "center": [133, -27], "scale": 600},
   "layer": [
     {
       "data": {
@@ -14,29 +15,43 @@
     },
     {
       "data": {
-        "values": [
-          {"state": "NSW", "lon": 146.5, "lat": -32.0, "pct": 26.3},
-          {"state": "VIC", "lon": 144.5, "lat": -37.2, "pct": 23.8},
-          {"state": "QLD", "lon": 145.0, "lat": -22.0, "pct": 29.4},
-          {"state": "SA",  "lon": 135.5, "lat": -30.0, "pct": 29.3},
-          {"state": "WA",  "lon": 121.5, "lat": -26.0, "pct": 29.9},
-          {"state": "TAS", "lon": 146.5, "lat": -42.0, "pct": 26.8},
-          {"state": "NT",  "lon": 133.5, "lat": -19.5, "pct": 31.1},
-          {"state": "ACT", "lon": 149.1, "lat": -35.5, "pct": 25.7}
-        ]
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/4_interactive_scatter_plot/js/WorldMapWithGraticules.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_1_states_provinces"}
       },
-      "mark": {"type": "circle", "opacity": 0.85},
+      "transform": [
+        {
+          "lookup": "properties.name",
+          "from": {
+            "data": {
+              "values": [
+                {"state": "New South Wales", "pct": 26.3},
+                {"state": "Victoria", "pct": 23.8},
+                {"state": "Queensland", "pct": 29.4},
+                {"state": "South Australia", "pct": 29.3},
+                {"state": "Western Australia", "pct": 29.9},
+                {"state": "Tasmania", "pct": 26.8},
+                {"state": "Northern Territory", "pct": 31.1},
+                {"state": "Australian Capital Territory", "pct": 25.7}
+              ]
+            },
+            "key": "state",
+            "fields": ["pct"]
+          }
+        },
+        {"filter": "datum.pct != null"}
+      ],
+      "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1},
       "encoding": {
-        "longitude": {"field": "lon", "type": "quantitative"},
-        "latitude": {"field": "lat", "type": "quantitative"},
-        "size": {"value": 3500},
         "color": {
           "field": "pct",
           "type": "quantitative",
           "scale": {"type": "threshold", "domain": [24, 27, 29, 31], "range": ["#fde8c8", "#f5c88a", "#e09040", "#c86810", "#8B4500"]},
           "legend": {"title": "% Exceeding Guidelines", "orient": "bottom", "gradientLength": 220, "labelFont": "DM Sans", "titleFont": "DM Sans"}
         },
-        "tooltip": [{"field": "state", "title": "State"}, {"field": "pct", "title": "% Exceeding", "format": ".1f"}]
+        "tooltip": [
+          {"field": "properties.name", "title": "State/Territory"},
+          {"field": "pct", "title": "% Exceeding", "format": ".1f"}
+        ]
       }
     },
     {
@@ -60,6 +75,5 @@
       }
     }
   ],
-  "projection": {"type": "mercator"},
   "config": {"view": {"stroke": null}, "background": "transparent"}
 }
